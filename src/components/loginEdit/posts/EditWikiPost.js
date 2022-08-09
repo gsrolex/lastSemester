@@ -9,6 +9,7 @@ import useAxios from "../../../hooks/useAxios";
 import Heading from "../../layout/Heading";
 import DeleteButton from "./DeleteButton";
 import Button from "react-bootstrap/Button";
+import Spinner from "react-bootstrap/Spinner";
 
 const schema = yup.object().shape({
   title: yup.string().required("Title is required"),
@@ -70,7 +71,12 @@ export default function EditWikiPost() {
     }
   }
 
-  if (fetchingPost) return <div>Loading...</div>;
+  if (fetchingPost)
+    return (
+      <div>
+        <Spinner animation="border" />
+      </div>
+    );
 
   if (fetchError) return <div>Something went wrong</div>;
 
