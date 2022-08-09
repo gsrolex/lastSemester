@@ -12,22 +12,25 @@ export default function PostWikiList() {
 
   const http = useAxios();
 
-  useEffect(function () {
-    async function getMedia() {
-      try {
-        const response = await http.get("wp/v2/posts/?per_page=100");
-        console.log("response", response);
-        setPosts(response.data);
-      } catch (error) {
-        console.log(error);
-        setError(error.toString());
-      } finally {
-        setLoading(false);
+  useEffect(
+    function () {
+      async function getMedia() {
+        try {
+          const response = await http.get("wp/v2/posts/?per_page=100");
+          console.log("response", response);
+          setPosts(response.data);
+        } catch (error) {
+          console.log(error);
+          setError(error.toString());
+        } finally {
+          setLoading(false);
+        }
       }
-    }
 
-    getMedia();
-  }, []);
+      getMedia();
+    },
+    [http]
+  );
 
   if (loading)
     return (

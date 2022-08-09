@@ -31,22 +31,25 @@ export default function EditWikiPost() {
   let { id } = useParams();
   const url = `wp/v2/posts/${id}`;
 
-  useEffect(function () {
-    async function getPost() {
-      try {
-        const response = await http.get(url);
-        console.log("response", response.data);
-        setPost(response.data);
-      } catch (error) {
-        console.log(error);
-        setFetchError(error.toString());
-      } finally {
-        setFetchingPost(false);
+  useEffect(
+    function () {
+      async function getPost() {
+        try {
+          const response = await http.get(url);
+          console.log("response", response.data);
+          setPost(response.data);
+        } catch (error) {
+          console.log(error);
+          setFetchError(error.toString());
+        } finally {
+          setFetchingPost(false);
+        }
       }
-    }
 
-    getPost();
-  }, []);
+      getPost();
+    },
+    [http, url]
+  );
 
   async function onSubmit(data) {
     setUpdatingPost(true);
