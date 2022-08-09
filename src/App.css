@@ -1,0 +1,165 @@
+* {
+	box-sizing: border-box;
+	
+	
+}
+
+
+a {
+	text-decoration: none;
+}
+
+.searchStyle {
+	background-color:#FBDF93 ;
+	
+}
+
+.delete:hover {
+	background: rgb(255, 0, 0) !important;
+	
+}
+
+.searchStyle button {
+	background-color: #000000;
+	color: white;
+	padding: 15px 40px;
+	border-radius: 0px;
+
+}
+
+.searchStyle input{
+	border-radius: 0px;
+	width: 300px;
+
+}
+.lessMargin {
+	margin: 0px 0px 0px -10px;
+}
+
+.coco {
+
+	min-height: 200x;
+}
+
+
+
+.container {
+	max-width: 1000px;
+	margin: 1.2rem auto;
+
+}
+
+.errorMessageForm {
+	background: rgb(136, 89, 89);
+	color: rgb(194, 10, 10);
+	padding: 0.28rem 0.73rem;
+}
+
+
+
+
+.success {
+	padding: 10px 20px 10px 20px;
+	max-width: 330px !important;
+	margin: 10px 0px;
+	background: rgb(20, 138, 20);
+	color: white;
+}
+
+
+
+.lightFont   {
+	color: white !important;
+}
+.logoFont {
+	color: rgb(255, 255, 255) !important;
+
+		
+}
+
+
+.loginFont {
+	color: green !important;
+}
+ .loginFont:hover {
+	text-decoration: underline;
+}
+.lightFont:hover {
+	text-decoration: underline;
+}
+
+
+.center {
+    
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+
+ 
+}
+
+.formBackground {
+	width: 250px;
+	margin:auto;
+	padding: 40px 20px 40px 20px;
+
+
+
+}
+
+
+.textAreaPost {
+
+	min-height: 200px;
+	max-width: 330px;
+	min-width: 330px;
+	
+}
+
+.widthH {
+	width: 330px !important;
+}
+
+.goBack:hover {
+	background-color: rgb(221, 221, 221) !important;
+
+}
+
+.submitButton {
+	background-color: rgb(58, 148, 58);
+	padding: 10px 20px;
+	border: none;
+}
+.submitButton:hover {
+	background-color: rgb(67, 185, 67);
+}
+.font a{
+	font-size: 17px;
+	text-decoration: none;
+	font-weight: 500;
+	color: rgb(0, 0, 0);
+}
+
+
+
+.moving-left
+{
+ 
+  position: relative;
+  transition: transform 0.3s ease;
+  transform: translateX(0px);
+ 
+}
+.moving-left:hover
+{
+ transform: translateX(8px);
+}
+
+.moving-left button
+{
+  left: 8px;
+  position: absolute;
+  top: 30px;
+  z-index: 99;
+}
