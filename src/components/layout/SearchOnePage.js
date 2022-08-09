@@ -13,20 +13,23 @@ export default function SearchOnePage() {
 
   const http = useAxios();
 
-  useEffect(function () {
-    async function getMedia() {
-      try {
-        const response = await http.get("wp/v2/posts/?per_page=100");
-        console.log("responseeeee1", response);
-        setPosts(response.data);
-      } catch (error) {
-        console.log("tull");
-        console.log(error);
+  useEffect(
+    function () {
+      async function getMedia() {
+        try {
+          const response = await http.get("wp/v2/posts/?per_page=100");
+          console.log("responseeeee1", response);
+          setPosts(response.data);
+        } catch (error) {
+          console.log("tull");
+          console.log(error);
+        }
       }
-    }
 
-    getMedia();
-  }, []);
+      getMedia();
+    },
+    [http]
+  );
 
   function search(posts) {
     return posts.filter((item) => {
