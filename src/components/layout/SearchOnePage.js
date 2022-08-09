@@ -9,22 +9,18 @@ import Card from "react-bootstrap/Card";
 export default function SearchOnePage() {
   const [posts, setPosts] = useState([]);
 
-  const [error, setError] = useState(null);
-
   const [q, setQ] = useState("");
-
-  const http = useAxios();
 
   useEffect(function () {
     async function getMedia() {
       try {
+        const http = useAxios();
         const response = await http.get("wp/v2/posts/?per_page=100");
         console.log("responseeeee1", response);
         setPosts(response.data);
       } catch (error) {
         console.log("tull");
         console.log(error);
-        setError(error.toString());
       }
     }
 
