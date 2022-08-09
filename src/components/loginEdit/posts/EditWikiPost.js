@@ -26,14 +26,14 @@ export default function EditWikiPost() {
     resolver: yupResolver(schema),
   });
 
+  const http = useAxios();
   const history = useHistory();
   let { id } = useParams();
+  const url = `wp/v2/posts/${id}`;
 
   useEffect(function () {
     async function getPost() {
       try {
-        const http = useAxios();
-        const url = `wp/v2/posts/${id}`;
         const response = await http.get(url);
         console.log("response", response.data);
         setPost(response.data);
